@@ -1,0 +1,28 @@
+.waiter-screen {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.waiter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.waiter-icon {
+    width: 10vh;
+    height: 10vh;
+    margin: 12% 0;
+}
+
+.waiter-content {
+    color: #F0F0F0;
+    font-size: 1.8em;
+}

@@ -1,0 +1,27 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 4.5% 3%;
+
+}
+
+.input-label {
+    margin-bottom: 4%;
+    font-size: 1.2em;
+}
+
+.input-control {
+    font-size: 1.2em;
+    padding: 2% 4%;
+    border: none;
+    box-shadow: 0 0 2px #1A1A1A;
+    border-radius: 128px;
+    outline: none;
+}
+
+.input-exception {
+    color: #f02816;
+    text-align: center;
+    font-size: 1em;
+    margin: 2% 0;
+}

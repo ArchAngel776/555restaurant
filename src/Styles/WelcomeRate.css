@@ -1,0 +1,40 @@
+.welcome-rate-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5% 2.5%;
+    background-color: #1a1a1a;
+    padding: 3%;
+}
+
+.welcome-rate-icon {
+    width: 4vh;
+    height: 4vh;
+    margin: 0 2%;
+}
+
+.welcome-rate-title {
+    margin: 0 2%;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #F0F0F0;
+    white-space: nowrap;
+    flex: 2;
+    text-align: center;
+}
+
+.welcome-rate-break {
+    color: #F0F0F0;
+    font-size: 1.6em;
+    margin: 0 2%;
+    flex: 1;
+    text-align: center;
+}
+
+.welcome-rate-description {
+    margin: 0 2%;
+    font-size: 1.2em;
+    color: #F0F0F0;
+    flex: 5;
+    text-align: center;
+}

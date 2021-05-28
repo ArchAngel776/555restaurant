@@ -1,0 +1,63 @@
+.order-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-title {
+    font-size: 3em;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+}
+
+.order-description-container {
+    display: flex;
+    flex-direction: column;
+    margin: 6% 3%;
+}
+
+.order-description-content {
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #FFFFFF;
+    padding: 3% 4.5%;
+}
+
+.order-button-control {
+    color: #f0f016;
+    font-size: 1.6em;
+    background-color: #1a1a1a;
+    border: none;
+    padding: 2% 6%;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .2s ease;
+    margin: 4% 8%;
+}
+
+.order-button-control:hover {
+    background-color: #f02816;
+}
+
+.order-form-button {
+    color: #f0f016;
+    font-size: 1.6em;
+    background-color: #1a1a1a;
+    border: none;
+    padding: 2% 16%;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .1s ease;
+    width: fit-content;
+    margin: 6% 0;
+    align-self: center;
+}
+
+.order-form-button:hover {
+    background-color: #f02816;
+}

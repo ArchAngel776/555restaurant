@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './Styles/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { STORAGE } from './Data/Constants/Storage';
+import { AppScreen } from './Data/Enums/AppScreen';
+import LocalStorage from './App/Services/LocalStorage';
+
+const screen = new LocalStorage(STORAGE.SCREEN).getNumber();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App screen={screen || AppScreen.WELCOME} />
   </React.StrictMode>,
   document.getElementById('root')
 );
