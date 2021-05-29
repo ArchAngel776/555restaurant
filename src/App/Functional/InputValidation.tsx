@@ -14,6 +14,8 @@ export default function InputValidation(target : Input, property : string, descr
 
         onInputMethod.call(this, event);
 
+        if (!this.props.clientSideValidation) return this.closeException();
+
         const { value } = event.currentTarget;
 
         const Validator = this.props.validator;

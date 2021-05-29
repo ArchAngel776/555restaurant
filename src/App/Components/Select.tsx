@@ -22,6 +22,7 @@ export interface SelectProps {
     closeExternalException : Callback;
     validator : ValidatorType;
     options : Array<SelectOption>;
+    clientSideValidation : boolean;
 }
 
 // State

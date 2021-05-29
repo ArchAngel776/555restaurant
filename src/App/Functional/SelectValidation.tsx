@@ -18,6 +18,8 @@ export default function SelectValidation(target : Select, property : string, des
 
             callback();
 
+            if (!this.props.clientSideValidation) return this.closeException();
+
             const Validator = this.props.validator;
 
             const response = new Validator(value).validate();

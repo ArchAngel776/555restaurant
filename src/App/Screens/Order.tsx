@@ -31,6 +31,7 @@ import ResultData from '../../Data/Interfaces/ResultData';
 import LocalStorage from '../Services/LocalStorage';
 import { STORAGE } from '../../Data/Constants/Storage';
 import Callback from '../../Data/Interfaces/Callback';
+import SwitchBox from '../Components/SwitchBox';
 
 // Props
 
@@ -43,6 +44,7 @@ export interface OrderProps extends ScreenComponentProps {
 // State
 
 export interface OrderState extends ScreenComponentState {
+    clientSideValidation : boolean;
     formStructure : FormControlStructure;
 }
 
@@ -56,6 +58,7 @@ export default class Order extends ScreenComponent<OrderProps, OrderState> {
 
         this.state = {
             opacity: 0,
+            clientSideValidation: true,
             formStructure: {
                 name: {
                     active: true,
@@ -135,6 +138,10 @@ export default class Order extends ScreenComponent<OrderProps, OrderState> {
         this.disableControl = this.disableControl.bind(this);
 
         this.changeType = this.changeType.bind(this);
+
+        this.enableClientSideValidation = this.enableClientSideValidation.bind(this);
+
+        this.disableClientSideValidation = this.disableClientSideValidation.bind(this);
 
         this.order = this.order.bind(this);
 
@@ -247,6 +254,18 @@ export default class Order extends ScreenComponent<OrderProps, OrderState> {
         this.setControlValue("type", value);
 
         this.detectAddonFields(this.state.formStructure.type.value as FoodType);
+
+    }
+
+    protected enableClientSideValidation() : void {
+
+        this.setState({ clientSideValidation: true });
+
+    }
+
+    protected disableClientSideValidation() : void {
+
+        this.setState({ clientSideValidation: false });
 
     }
 
@@ -424,7 +443,8 @@ export default class Order extends ScreenComponent<OrderProps, OrderState> {
                     onInput={ value => this.setControlValue("name", value) }
                     externalException={ this.state.formStructure.name.externalException }
                     closeExternalException={ () => this.closeExternalException("name") }
-                    validator={ this.state.formStructure.name.Validator } />
+                    validator={ this.state.formStructure.name.Validator }
+                    clientSideValidation={ this.state.clientSideValidation } />
 
                 <Input
                     active={ this.state.formStructure.preparation_time.active }
@@ -434,7 +454,8 @@ export default class Order extends ScreenComponent<OrderProps, OrderState> {
                     onInput={ value => this.setControlValue("preparation_time", value) }
                     externalException={ this.state.formStructure.preparation_time.externalException }
                     closeExternalException={ () => this.closeExternalException("preparation_time") }
-                    validator={ this.state.formStructure.preparation_time.Validator } />
+                    validator={ this.state.formStructure.preparation_time.Validator }
+                    clientSideValidation={ this.state.clientSideValidation } />
 
                 <Select
                     active={ this.state.formStructure.type.active }
@@ -444,7 +465,8 @@ export default class Order extends ScreenComponent<OrderProps, OrderState> {
                     onSelect={ this.changeType }
                     externalException={ this.state.formStructure.type.externalException }
                     closeExternalException={ () => this.closeExternalException("type") }
-                    validator={ this.state.formStructure.type.Validator } />
+                    validator={ this.state.formStructure.type.Validator }
+                    clientSideValidation={ this.state.clientSideValidation } />
 
                 <Input
                     active={ this.state.formStructure.no_of_slices.active }
@@ -454,7 +476,8 @@ export default class Order extends ScreenComponent<OrderProps, OrderState> {
                     onInput={ value => this.setControlValue("no_of_slices", value) }
                     externalException={ this.state.formStructure.no_of_slices.externalException }
                     closeExternalException={ () => this.closeExternalException("no_of_slices") }
-                    validator={ this.state.formStructure.no_of_slices.Validator } />
+                    validator={ this.state.formStructure.no_of_slices.Validator }
+                    clientSideValidation={ this.state.clientSideValidation } />
 
                 <Input
                     active={ this.state.formStructure.diameter.active }
@@ -464,7 +487,8 @@ export default class Order extends ScreenComponent<OrderProps, OrderState> {
                     onInput={ value => this.setControlValue("diameter", value) }
                     externalException={ this.state.formStructure.diameter.externalException }
                     closeExternalException={ () => this.closeExternalException("diameter") }
-                    validator={ this.state.formStructure.diameter.Validator } />
+                    validator={ this.state.formStructure.diameter.Validator }
+                    clientSideValidation={ this.state.clientSideValidation } />
 
                 <Input
                     active={ this.state.formStructure.spiciness_scale.active }
@@ -474,7 +498,8 @@ export default class Order extends ScreenComponent<OrderProps, OrderState> {
                     onInput={ value => this.setControlValue("spiciness_scale", value) }
                     externalException={ this.state.formStructure.spiciness_scale.externalException }
                     closeExternalException={ () => this.closeExternalException("spiciness_scale") }
-                    validator={ this.state.formStructure.spiciness_scale.Validator } />
+                    validator={ this.state.formStructure.spiciness_scale.Validator }
+                    clientSideValidation={ this.state.clientSideValidation } />
 
                 <Input
                     active={ this.state.formStructure.slices_of_bread.active }
@@ -484,7 +509,14 @@ export default class Order extends ScreenComponent<OrderProps, OrderState> {
                     onInput={ value => this.setControlValue("slices_of_bread", value) }
                     externalException={ this.state.formStructure.slices_of_bread.externalException }
                     closeExternalException={ () => this.closeExternalException("slices_of_bread") }
-                    validator={ this.state.formStructure.slices_of_bread.Validator } />
+                    validator={ this.state.formStructure.slices_of_bread.Validator }
+                    clientSideValidation={ this.state.clientSideValidation } />
+
+                <SwitchBox
+                    label="Enable client-side validation"
+                    enable={ this.state.clientSideValidation }
+                    onEnabled={ this.enableClientSideValidation }
+                    onDisabled={ this.disableClientSideValidation } />
 
                 <button type="button" className="order-form-button" onClick={ this.order }>Order</button>
 

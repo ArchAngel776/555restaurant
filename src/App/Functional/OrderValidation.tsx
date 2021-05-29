@@ -10,7 +10,7 @@ export default function OrderValidaion(target : Order, property : string, descri
 
     descriptor.value = async function makeOrder( this : Order, fields : FormControlStructure ) : Promise<void> {
 
-        if (this.validate(fields)) {
+        if (( this.state.clientSideValidation && this.validate(fields) ) || !this.state.clientSideValidation) {
 
             makeOrderMethod.call(this, fields);
 

@@ -19,6 +19,7 @@ export interface InputProps {
     externalException : string | null;
     closeExternalException : Callback;
     validator : ValidatorType;
+    clientSideValidation : boolean;
 }
 
 // State
