@@ -6,9 +6,9 @@ Small, modest project written in ReactJS / TypeScript. Allow client to make a me
 
 Project was written by using NodeJS. Make sure that your Node and NPM versions are compatible:
 
-``NodeJS ^v16.1.0``
+``NodeJS v^16.1.0``
 
-``NPM ^v7.11.2``
+``NPM v^7.11.2``
 
 ## Configure
 
