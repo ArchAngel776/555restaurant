@@ -40,7 +40,7 @@ Almost ready. Now you can bind front-side project to simple server used:
 
 On your local machine will start local server, default run on 5000 port.
 
-Now you can see results by opened browser and gone to the address: ``localhost:5000``
+Now you can see results by opening browser and going to the address: ``localhost:5000``
 
 ## Just enjoy
 
