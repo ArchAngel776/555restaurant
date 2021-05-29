@@ -14,11 +14,11 @@ After that open your project folder
 
 ### Prepare
 
-You have a raw version in the front of your eyes. Now you must install required dependences. Just use:
+You have a raw version in the front of your eyes. Now you must install required dependencies. Just use:
 
 ``npm install``
 
-When all dependences are ready let's go to the building. Exec command:
+When all dependencies are ready let's go to the building. Exec command:
 
 ``npm run build``
 
