@@ -2,6 +2,14 @@
 
 Small, modest project written in ReactJS / TypeScript. Allow client to make a meal order. Has a 3 screens, nice looking UI and own validator.
 
+## Required
+
+Project was written by using NodeJS. Make sure that your Node and NPM versions are compatible:
+
+``NodeJS v16.1.0^``
+
+``NPM v7.11.2^``
+
 ## Configure
 
 ### Download
